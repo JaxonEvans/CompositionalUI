@@ -1,0 +1,6 @@
+framework module CompositionalUI {
+  umbrella header "CompositionalUI-umbrella.h"
+
+  export *
+  module * { export * }
+}

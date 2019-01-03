@@ -1,0 +1,16 @@
+PODS:
+  - CompositionalUI (0.1.0)
+
+DEPENDENCIES:
+  - CompositionalUI (from `../`)
+
+EXTERNAL SOURCES:
+  CompositionalUI:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CompositionalUI: 1944b75fb9a8bcb73daab508e2864c5b86ffdef6
+
+PODFILE CHECKSUM: 2f28d1bd4820a59bfa08142536b0062c9efca6ce
+
+COCOAPODS: 1.5.3

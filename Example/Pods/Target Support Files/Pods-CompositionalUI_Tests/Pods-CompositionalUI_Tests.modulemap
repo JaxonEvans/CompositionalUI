@@ -1,0 +1,6 @@
+framework module Pods_CompositionalUI_Tests {
+  umbrella header "Pods-CompositionalUI_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "CompositionalUI",
+  "version": "0.1.0",
+  "summary": "A short description of CompositionalUI.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/JaxonEvans/CompositionalUI",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "JaxonEvans": "jaxon.evans@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/JaxonEvans/CompositionalUI.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CompositionalUI/Classes/**/*"
+}
