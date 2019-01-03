@@ -1,0 +1,6 @@
+use_frameworks!
+target 'CompositionalUI_Tests' do
+  pod 'CompositionalUI', :path => '../'
+  
+  
+end
