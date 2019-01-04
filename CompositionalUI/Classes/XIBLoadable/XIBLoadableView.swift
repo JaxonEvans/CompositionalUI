@@ -97,11 +97,8 @@ extension UIView {
     }
 }
 
-struct CompositionalUIConfig {
-    
-    static var shared = CompositionalUIConfig()
-    
-    var projectName: String?
+open class CompositionalUIConfig {
+    static var projectName: String { fatalError("XIBLoadable was used without overriding CompositionalUIConfig.projectName") }
 }
 
 
