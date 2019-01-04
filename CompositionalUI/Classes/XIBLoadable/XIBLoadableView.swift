@@ -59,20 +59,13 @@ open class XIBLoadableView: StylingView {
 
 extension UIViewController {
     static func nibNameToLoad(_ classTypeName: String) -> String {
-
-        //TODO move this to a constants file
-        guard let projectName = CompositionalUIConfig.shared.projectName else {
-            fatalError("Project name is unknown. Before using Compositional UI set CompositionalUIConfig.shared.projectName to your project name.")
-        }
-        
+        let projectName = Bundle.main.infoDictionary!["CFBundleName"] as! String
         let nibName = classTypeName.replacingOccurrences(of: projectName, with: "")
-
         return nibName
     }
 }
 
 extension UIView {
-    
     open func configureSubviewsStyle(subviews: [UIView]) {
         for subview in subviews {
             
@@ -85,20 +78,9 @@ extension UIView {
     }
     
     static func nibNameToLoad(_ classTypeName: String) -> String {
-        
-        guard let projectName = CompositionalUIConfig.shared.projectName else {
-            fatalError("Project name is unknown. Before using Compositional UI set CompositionalUIConfig.shared.projectName to your project name.")
-        }
-        
-        let replaceThis = "\(projectName)."
-        let nibName  = classTypeName.replacingOccurrences(of: replaceThis, with: "")
+        let projectName = Bundle.main.infoDictionary!["CFBundleName"] as! String
+        let nibName  = classTypeName.replacingOccurrences(of: "\(projectName).", with: "")
         
         return nibName
     }
 }
-
-open class CompositionalUIConfig {
-    static var projectName: String { fatalError("XIBLoadable was used without overriding CompositionalUIConfig.projectName") }
-}
-
-
