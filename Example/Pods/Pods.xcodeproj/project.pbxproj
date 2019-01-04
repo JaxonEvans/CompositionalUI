@@ -53,7 +53,7 @@
 		3BE154216978E1625ADF6B75A0A898BF /* CompositionalUI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CompositionalUI-umbrella.h"; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7A03AE45ADE07464AB1E3BC5ED057311 /* Pods-CompositionalUI_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CompositionalUI_Tests.modulemap"; sourceTree = "<group>"; };
-		82BB79E221DEC9AC00DE6E28 /* Stylers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylers.swift; sourceTree = "<group>"; };
+		82BB79E221DEC9AC00DE6E28 /* Stylers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stylers.swift; path = CompositionalUI/Classes/Stylers.swift; sourceTree = "<group>"; };
 		82BB79E521DEC9BB00DE6E28 /* StylingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StylingTextField.swift; sourceTree = "<group>"; };
 		82BB79E621DEC9BB00DE6E28 /* StylingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StylingView.swift; sourceTree = "<group>"; };
 		82BB79E721DEC9BB00DE6E28 /* StylingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StylingLabel.swift; sourceTree = "<group>"; };
@@ -177,7 +177,8 @@
 				82BB79E921DEC9BB00DE6E28 /* StylingButton.swift */,
 				82BB79EA21DEC9BB00DE6E28 /* StylingTextView.swift */,
 			);
-			path = "Styling UI Elements";
+			name = "Styling UI Elements";
+			path = "CompositionalUI/Classes/Styling UI Elements";
 			sourceTree = "<group>";
 		};
 		82BB79EB21DEC9BC00DE6E28 /* XIBLoadable */ = {
@@ -185,7 +186,8 @@
 			children = (
 				82BB79EC21DEC9BC00DE6E28 /* XIBLoadableView.swift */,
 			);
-			path = XIBLoadable;
+			name = XIBLoadable;
+			path = CompositionalUI/Classes/XIBLoadable;
 			sourceTree = "<group>";
 		};
 		82BB79ED21DEC9BC00DE6E28 /* Styles */ = {
@@ -198,7 +200,8 @@
 				82BB79F221DEC9BC00DE6E28 /* ViewStyle.swift */,
 				82BB79F321DEC9BC00DE6E28 /* ButtonStyle.swift */,
 			);
-			path = Styles;
+			name = Styles;
+			path = CompositionalUI/Classes/Styles;
 			sourceTree = "<group>";
 		};
 		8817C5638915D89DC8C2ED9D67919ABD /* CompositionalUI */ = {
