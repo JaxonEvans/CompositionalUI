@@ -6,19 +6,16 @@
 //
 
 import UIKit
+import Foundation
 
 @IBDesignable
-open class XIBLoadableView: StylingView {
+open class XIBLoadableView: UIView {
 
     var view: UIView!
-    
+
     var nibName: String {
         let classType = type(of: self)
         return UIView.nibNameToLoad(classType.description())
-    }
-    
-    override open var styles: [ViewStyle] {
-        return []
     }
 
     override init(frame: CGRect) {
@@ -35,6 +32,7 @@ open class XIBLoadableView: StylingView {
         view = loadViewFromNib()
         view.frame = bounds
         view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        view.backgroundColor = UIColor.blue
         addSubview(view)
     }
 
@@ -43,17 +41,20 @@ open class XIBLoadableView: StylingView {
         let bundle = Bundle(for: classType)
         let nib = UINib(nibName: nibName, bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
-        
         return view
     }
 
     override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         xibSetup()
+        //configureStyle()
+        
     }
+}
 
-    override func configureStyle() {
-        //configureSubviewsStyle(subviews: subviews)
+extension XIBLoadableView: Stylable {
+    func configureStyle() {
+        configureSubviewsStyle(subviews: subviews)
     }
 }
 
@@ -68,11 +69,7 @@ extension UIViewController {
 extension UIView {
     open func configureSubviewsStyle(subviews: [UIView]) {
         for subview in subviews {
-            
-            guard let subview = subview as? XIBLoadableView else {
-                continue
-            }
-            
+            guard let subview = subview as? Stylable else { continue }
             subview.configureStyle()
         }
     }
@@ -80,7 +77,11 @@ extension UIView {
     static func nibNameToLoad(_ classTypeName: String) -> String {
         let projectName = Bundle.main.infoDictionary!["CFBundleName"] as! String
         let nibName  = classTypeName.replacingOccurrences(of: "\(projectName).", with: "")
-        
+
         return nibName
     }
+}
+
+protocol Stylable {
+    func configureStyle()
 }

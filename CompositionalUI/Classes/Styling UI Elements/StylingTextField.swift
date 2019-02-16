@@ -28,11 +28,12 @@ open class StylingTextField: UITextField {
     var styles: [TextFieldStyle] {
         fatalError("\(String(describing: type(of: self))) inherits from StylableTextField but does not override 'styles'")
     }
-    
+}
+
+extension StylingTextField: Stylable {
     func configureStyle() {
         for style in styles {
             style.styler(self)
         }
     }
 }
-

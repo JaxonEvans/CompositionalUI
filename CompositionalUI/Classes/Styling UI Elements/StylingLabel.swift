@@ -7,7 +7,8 @@
 
 import UIKit
 
-@IBDesignable open class StylingLabel: UILabel {
+@IBDesignable
+open class StylingLabel: UILabel {
     
     override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
@@ -28,7 +29,9 @@ import UIKit
     open var styles: [LabelStyle] {
         fatalError("\(String(describing: type(of: self))) inherits from StylingLabel but does not override 'styles'")
     }
-    
+}
+
+extension StylingLabel: Stylable {
     func configureStyle() {
         for style in styles {
             style.styler(self)

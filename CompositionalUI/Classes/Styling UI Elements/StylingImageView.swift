@@ -28,7 +28,9 @@ open class StylingImageView: UIImageView {
     var styles: [ImageViewStyle] {
         fatalError("\(String(describing: type(of: self))) inherits from StylingLabel but does not override 'styles'")
     }
-    
+}
+
+extension StylingImageView: Stylable {
     func configureStyle() {
         for style in styles {
             style.styler(self)

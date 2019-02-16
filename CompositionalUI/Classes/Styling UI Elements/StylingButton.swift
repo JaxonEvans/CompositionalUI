@@ -28,11 +28,12 @@ open class StylingButton: UIButton {
     open var styles: [ButtonStyle] {
         fatalError("\(String(describing: type(of: self))) inherits from StylingButton but does not override 'styles'")
     }
-    
-    public func configureStyle() {
+}
+
+extension StylingButton: Stylable {
+    func configureStyle() {
         for style in styles {
             style.styler(self)
         }
     }
 }
-

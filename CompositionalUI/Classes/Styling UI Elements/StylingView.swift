@@ -19,12 +19,13 @@ open class StylingView: UIView {
         configureStyle()
     }
     
-    open var styles: [ViewStyle] {
+    open var styles: [ViewStyle] { return []
         fatalError("\(String(describing: type(of: self))) inherits from StylingView but does not override 'styles'")
     }
-    
-    func configureStyle() {
-        
+}
+
+extension StylingView: Stylable {
+    @objc func configureStyle() {
         for style in styles {
             style.styler(self)
         }

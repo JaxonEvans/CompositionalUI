@@ -28,7 +28,9 @@ open class StylingTextView: UITextView {
     var styles: [TextViewStyle] {
         fatalError("\(String(describing: type(of: self))) inherits from StylingTextView but does not override 'styles'")
     }
-    
+}
+
+extension StylingTextView: Stylable {
     func configureStyle() {
         for style in styles {
             style.styler(self)

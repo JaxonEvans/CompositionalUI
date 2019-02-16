@@ -22,4 +22,3 @@ extension TextFieldStyle {
         return styler
     }
 }
-

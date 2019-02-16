@@ -23,4 +23,3 @@ extension ButtonStyle {
         return styler
     }
 }
-

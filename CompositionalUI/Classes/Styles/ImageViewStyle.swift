@@ -22,4 +22,3 @@ extension ImageViewStyle {
         return styler
     }
 }
-
